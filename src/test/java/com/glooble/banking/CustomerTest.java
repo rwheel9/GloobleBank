@@ -18,34 +18,6 @@ public class CustomerTest {
     }
 
     /**
-     * Test of getBank method, of class Customer.
-     */
-    @Test
-    public void testGetBank() {
-    }
-
-    /**
-     * Test of getCustomerId method, of class Customer.
-     */
-    @Test
-    public void testGetCustomerId() {
-    }
-
-    /**
-     * Test of getLastName method, of class Customer.
-     */
-    @Test
-    public void testGetLastName() {
-    }
-
-    /**
-     * Test of getFirstName method, of class Customer.
-     */
-    @Test
-    public void testGetFirstName() {
-    }
-
-    /**
      * Test of getCustomerAccounts method, of class Customer.
      */
     @Test
