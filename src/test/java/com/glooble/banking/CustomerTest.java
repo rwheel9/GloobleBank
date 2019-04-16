@@ -10,9 +10,18 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Reid
+ * @author Brandon Henriksen
  */
 public class CustomerTest {
+    
+    @Before
+   public void init () {
+      this.bank = null;
+        this.customerId = "";
+        this.lastName = "";
+        this.firstName = "";
+   }
+    
     
     public CustomerTest() {
     }
