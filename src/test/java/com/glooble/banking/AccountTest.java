@@ -34,14 +34,24 @@ public class AccountTest {
     }
     
     @Test
-    public void testDeposit() {
+    public void testDeposit() 
+    {
+        {
+          assertEquals(0, primaryAccount.getBalance());
+          primaryAccount.deposit(100);
+          assertEquals(100, primaryAccount.getBalance());
+        }
     }
 
-    /**
-     * Test of withdraw method, of class Account.
-     */
     @Test
-    public void testWithdraw() {
+    public void testWithdraw() 
+    {
+        public void testWithdraw() 
+        {
+            assertEquals(100, primaryAccount.getBalance());          
+            primaryAccount.withdraw(100);
+            assertEquals(0, primaryAccount.getBalance());
+        }
     }
 
     @Test
@@ -64,7 +74,10 @@ public class AccountTest {
     }
     
     @Test
-    public void testGetAccountDescription() {
+    public void testGetAccountDescription() 
+    {
+        primaryAccount.getAccountDescription();
+        //more to follow
     }
 
     /**
