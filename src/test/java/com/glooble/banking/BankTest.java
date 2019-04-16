@@ -6,6 +6,7 @@
 package com.glooble.banking;
 
 import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
@@ -13,6 +14,18 @@ import static org.junit.Assert.*;
  * @author Reid
  */
 public class BankTest {
+    
+    /**
+     * Setting things up before running any test methods.
+     */
+    @BeforeClass
+    public static void setup() {
+        Bank bankTest = new Bank("bankTest");
+        String firstName = "Bob";
+        String lastName = "Smith";
+        Customer bobSmith = new Customer(bankTest, lastName, firstName);
+    
+    }
     
     public BankTest() {
     }
@@ -47,6 +60,7 @@ public class BankTest {
 
     /**
      * Test of addCustomer method, of class Bank.
+     * Tests if the customerId output is correct.
      */
     @Test
     public void testAddCustomer() {
@@ -59,6 +73,16 @@ public class BankTest {
         assertNotNull("Customer ID should not be null.", result);
     }
 
+    /**
+     * Test of the addCustomer method.
+     * Tests if a Customer object was added to the specified Bank.
+     */
+    @Test
+    public void testAddCustomer_actuallyAdded() {
+        final Bank bank1 = new Bank("Bank1");
+        // To be continued or deleted
+    }
+    
     /**
      * Test of removeCustomer method, of class Bank.
      */
