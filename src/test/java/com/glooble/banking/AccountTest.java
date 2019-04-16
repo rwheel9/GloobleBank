@@ -5,17 +5,32 @@
  */
 package com.glooble.banking;
 
-import org.junit.Test;
+import org.junit.*; 
+import static org.junit.Assert.*; 
+import banking.Account;
 
 /**
  *
  * @author Reid
+ * @author William
  */
 public class AccountTest {
 
-    /**
-     * Test of deposit method, of class Account.
-     */
+    private primaryAccount account;
+    
+    @Before 
+    public void setUp() 
+    { 
+        account = new SavingsAccount(100); 
+    } 
+    
+    @After 
+    public void tearDown() 
+    { 
+        account = null; 
+    }
+    
+    
     @Test
     public void testDeposit() {
     }
@@ -28,15 +43,31 @@ public class AccountTest {
     }
 
     /**
-     * Test of transfer method, of class Account.
+     * Tests normal transfer of funds prior
+     * to throwing the noted exception 
      */
     @Test
-    public void testTransfer() {
+    public void testTransfer() 
+    {
+        public void testTransfer() throws 
+                InsufficientFundsException 
+        { 
+            Account secondAccount = new Account(100); 
+            account.transfer(100, secondAccount); 
+            assertTrue (account.balance()==100); 
+            assertTrue (secondAccount.balance()==0); 
+        } 
+    
+        
+    @Test
+    public void testTransfer_InsufficientFundsException() 
+        throws InsufficientFundsException 
+        { 
+        Account secondAccount = new Account(100); 
+        account.transfer(101, secondAccount); 
+        }
     }
-
-    /**
-     * Test of getAccountDescription method, of class Account.
-     */
+    
     @Test
     public void testGetAccountDescription() {
     }
