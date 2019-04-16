@@ -16,20 +16,21 @@ import banking.Account;
  */
 public class AccountTest {
 
-    private primaryAccount account;
+    private Account primaryAccount;
+    private Account secondAccount;
     
     @Before 
     public void setUp() 
     { 
-        account = new SavingsAccount(100); 
+        primaryAccount = new Account("John Smith", 100, "Johns Acocunt");
+        secondAccount = new Account("Jane Doe", 100, "Janes Acocunt");
     } 
     
     @After 
     public void tearDown() 
     { 
-        account = null; 
+        primaryAccount = null; 
     }
-    
     
     @Test
     public void testDeposit() {
@@ -42,29 +43,22 @@ public class AccountTest {
     public void testWithdraw() {
     }
 
-    /**
-     * Tests normal transfer of funds prior
-     * to throwing the noted exception 
-     */
     @Test
     public void testTransfer() 
     {
         public void testTransfer() throws 
                 InsufficientFundsException 
-        { 
-            Account secondAccount = new Account(100); 
-            account.transfer(100, secondAccount); 
-            assertTrue (account.balance()==100); 
+        {  
+            primaryAccount.transfer(100, secondAccount); 
+            assertTrue (primaryAccount.balance()==100); 
             assertTrue (secondAccount.balance()==0); 
         } 
-    
-        
+         
     @Test
     public void testTransfer_InsufficientFundsException() 
         throws InsufficientFundsException 
         { 
-        Account secondAccount = new Account(100); 
-        account.transfer(101, secondAccount); 
+        primaryAccount.transfer(101, secondAccount); 
         }
     }
     
