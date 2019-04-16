@@ -28,6 +28,10 @@ public class BankTest {
     }
     
     public BankTest() {
+        Bank someBank = null;
+        assertNull(someBank);
+        someBank = new Bank("someBank");
+        assertNotNull(someBank);
     }
 
     /**
