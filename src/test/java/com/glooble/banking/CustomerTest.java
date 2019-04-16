@@ -13,17 +13,49 @@ import static org.junit.Assert.*;
  * @author Brandon Henriksen
  */
 public class CustomerTest {
-    
+    private final static int VALID_NAME = "";
+    private final static int VALID_ID = "";
+}
     @Before
-   public void init () {
-      this.bank = null;
+    public void init () {
+        this.bank = null;
         this.customerId = "";
         this.lastName = "";
         this.firstName = "";
    }
     
-    
-    public CustomerTest() {
+    @Test
+    public void startZeroCustomersWhenNewCreated() {
+        CustomerList customers = new CustomerList();
+        Assert.assertEquals(0, customers.getNumberOfCustomers());
+    }
+
+    @Test
+    public void newCustomerAdded() {
+        CustomerList customers = new CustomerList();
+        Customer customer = ""
+        customers.add(customer)
+        Assert.assertEquals(1, customers.getNumberOfCustomers());
+    }
+    @Test
+    public void nullWhenFindByIdInvokedWithNotId() {
+        CustomerList customers = new CustomerList();
+        Assert.assertEquals(null, customers.getCustomerId("")); 
+            
+    }
+
+    @Test
+    public void returnIdWhenInList() {
+        CustomerList customers = new CustomerList();
+        Customer customer = new Customer("name", 1, "customerId", 7);
+        customers.add(customer);
+        Assert.assertEquals(customer, customers.getCustomerId(1)); 
+            
+    public customerTest() {
+        @Test(expected = IllegalArgumentException.class)
+        public void shouldThrowExceptionWhenNameIsNull() {
+            Custumer custumer = new Custumer(null, VALID_NAME, VALID_ID);
+        }
     }
 
     /**
