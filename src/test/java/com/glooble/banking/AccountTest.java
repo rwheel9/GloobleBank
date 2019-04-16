@@ -30,6 +30,7 @@ public class AccountTest {
     public void tearDown() 
     { 
         primaryAccount = null; 
+        secondAccount = null;
     }
     
     @Test
